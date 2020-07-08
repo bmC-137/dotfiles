@@ -248,6 +248,11 @@ let g:lens#width_resize_min = 20
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
+Plug 'ferrine/md-img-paste.vim'
+autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
+" there are some defaults for image directory and image name, you can change them
+" let g:mdip_imgdir = 'img'
+" let g:mdip_imgname = 'image'
 "
 Plug 'camspiers/animate.vim'
 
