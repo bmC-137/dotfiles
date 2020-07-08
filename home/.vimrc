@@ -244,6 +244,11 @@ let g:lens#width_resize_min = 20
 
 
 "https://github.com/camspiers/animate.vim
+"
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled = 1
+"
 Plug 'camspiers/animate.vim'
 
 nnoremap <silent> <C-Down>    :call animate#window_delta_height(10)<CR>
