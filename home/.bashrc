@@ -308,42 +308,42 @@ export NVM_DIR="$HOME/.nvm"
 
 ####### fzf
 
-source /usr/share/fzf/key-bindings.bash
+# source /usr/share/fzf/key-bindings.bash
 
-source /usr/share/fzf/completion.bash
+# source /usr/share/fzf/completion.bash
 
-# When selecting files with fzf, we show file content with syntax highlighting,
-# or without highlighting if it's not a source file. If the file is a directory,
-# we use tree to show the directory's contents.
-# We only load the first 200 lines of the file which enables fast previews
-# of large text files.
-# Requires highlight and tree: pacman -S highlight tree
-export PS_FORMAT="pid,ppid,user,pri,ni,vsz,rss,pcpu,pmem,tty,stat,args"
+# # When selecting files with fzf, we show file content with syntax highlighting,
+# # or without highlighting if it's not a source file. If the file is a directory,
+# # we use tree to show the directory's contents.
+# # We only load the first 200 lines of the file which enables fast previews
+# # of large text files.
+# # Requires highlight and tree: pacman -S highlight tree
+# export PS_FORMAT="pid,ppid,user,pri,ni,vsz,rss,pcpu,pmem,tty,stat,args"
 
-export FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --reverse --inline-info --ansi --preview '(highlight -O ansi -l {} 2>/dev/null || cat {} || tree -C {}) 2>/dev/null | head -300'"
+# export FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --reverse --inline-info --ansi --preview '(highlight -O ansi -l {} 2>/dev/null || cat {} || tree -C {}) 2>/dev/null | head -300'"
 
-# export FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --reverse --multi --inline-info --ansi --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || highlight -O ansi -l {} 2>/dev/null || cat {} || tree -C {}) 2>/dev/null | head -300' --preview-window='right:hidden:wrap'"
-FD_OPTIONS="--follow --exclude .git --exclude node_modules"
+# # export FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --reverse --multi --inline-info --ansi --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || highlight -O ansi -l {} 2>/dev/null || cat {} || tree -C {}) 2>/dev/null | head -300' --preview-window='right:hidden:wrap'"
+# FD_OPTIONS="--follow --exclude .git --exclude node_modules"
 
-# export FZF_DEFAULT_COMMAND="git ls-files --cached --others --exclude-standard | fd --type f --type 1 $FD_OPTIONS"
+# # export FZF_DEFAULT_COMMAND="git ls-files --cached --others --exclude-standard | fd --type f --type 1 $FD_OPTIONS"
 
-export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
-export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
+# export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
+# export FZF_ALT_C_COMMAND="fd --type d $FD_OPTIONS"
 
-export BAT_PAGER="less -R"
+# export BAT_PAGER="less -R"
 
-complete -o bashdefault -o default -F _fzf_path_completion zathura
+# complete -o bashdefault -o default -F _fzf_path_completion zathura
 
-# Search a file with fzf and then open it in an editor
-fzf_then_open_in_editor() {
-  local file=$(fzf)
-  # Open the file if it exists
-  if [ -n "$file" ]; then
-    # Use the default editor if it's defined, otherwise Vim
-    ${EDITOR:-vim} "$file"
-  fi
-}
-bind -x '"C-o": fzf_then_open_in_editor'
+# # Search a file with fzf and then open it in an editor
+# fzf_then_open_in_editor() {
+#   local file=$(fzf)
+#   # Open the file if it exists
+#   if [ -n "$file" ]; then
+#     # Use the default editor if it's defined, otherwise Vim
+#     ${EDITOR:-vim} "$file"
+#   fi
+# }
+# bind -x '"C-o": fzf_then_open_in_editor'
 
 ## Settings to be tested
 
