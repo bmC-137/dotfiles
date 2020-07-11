@@ -92,7 +92,26 @@ Plug 'tpope/vim-fugitive'
 Plug 'edkolev/tmuxline.vim'
 
 Plug 'cohama/lexima.vim'
-
+" lexima rules for '%','<','<Space>'
+autocmd filetype html call lexima#add_rule({
+    \ 'char': '%',
+    \ 'at': '{\%#}',
+    \ 'input_after': '<Space><Space>%',
+    \ 'mode': 'i',
+    \ 'leave': 1,
+    \ 'filetype': 'html',
+    \ })
+autocmd filetype html call lexima#add_rule({
+    \ 'char': '<',
+    \ 'input_after': '>',
+    \ 'filetype': ['html', 'jinja', 'htmljinja', 'django', 'htmldjango', 'liquid', 'twig', 'html.twig', 'mako', 'xml'],
+    \ })
+autocmd filetype html call lexima#add_rule({
+    \ 'char': '<Space>',
+    \ 'at': '{{\%#',
+    \ 'input_after': '<Space>',
+    \ 'filetype': ['html', 'jinja', 'htmljinja', 'django', 'htmldjango', 'liquid', 'twig', 'html.twig', 'mako', 'xml'],
+    \ })
 
 " Plug 'pearofducks/ansible-vim'
 Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.sh' }
