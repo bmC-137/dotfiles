@@ -1,0 +1,112 @@
+Device:           Synaptics TM3330-001
+Kernel:           /dev/input/event14
+Group:            7
+Seat:             seat0, default
+Size:             106x51mm
+Capabilities:     pointer gesture
+Tap-to-click:     disabled
+Tap-and-drag:     enabled
+Tap drag lock:    disabled
+Left-handed:      disabled
+Nat.scrolling:    disabled
+Middle emulation: disabled
+Calibration:      n/a
+Scroll methods:   *two-finger edge 
+Click methods:    *button-areas clickfinger 
+Disable-w-typing: enabled
+Accel profiles:   none
+Rotation:         n/a
+
+# https://www.x.org/archive/X11R7.5/doc/man/man4/synaptics.4.html
+
+Section "InputClass"
+    Identifier "touchpad"
+    Driver "synaptics"
+    MatchIsTouchpad "on"
+        Option "TapButton1" "1"
+        Option "TapButton2" "2"
+        Option "TapButton3" "3"
+        Option "VertEdgeScroll" "on"
+        Option "VertTwoFingerScroll" "on"
+        Option "HorizEdgeScroll" "on"
+        Option "HorizTwoFingerScroll" "on"
+        Option "CircularScrolling" "on"
+        Option "CircScrollTrigger" "2"
+        Option "EmulateTwoFingerMinZ" "40"
+        Option "EmulateTwoFingerMinW" "8"
+        Option "CoastingSpeed" "0"
+        Option "FingerLow" "30"
+        Option "FingerHigh" "50"
+        Option "MaxTapTime" "125"
+EndSection
+
+
+
+Parameter settings:
+    LeftEdge                = 50
+    RightEdge               = 1222
+    TopEdge                 = 33
+    BottomEdge              = 579
+    FingerLow               = 30
+    FingerHigh              = 50
+    MaxTapTime              = 125
+    MaxTapMove              = 62
+    MaxDoubleTapTime        = 180
+    SingleTapTimeout        = 180
+    ClickTime               = 100
+    EmulateMidButtonTime    = 0
+    EmulateTwoFingerMinZ    = 40
+    EmulateTwoFingerMinW    = 8
+    VertScrollDelta         = 28
+    HorizScrollDelta        = 28
+    VertEdgeScroll          = 0
+    HorizEdgeScroll         = 0
+    CornerCoasting          = 0
+    VertTwoFingerScroll     = 1
+    HorizTwoFingerScroll    = 1
+    MinSpeed                = 1
+    MaxSpeed                = 1.75
+    AccelFactor             = 0.141743
+    TouchpadOff             = 1
+    LockedDrags             = 0
+    LockedDragTimeout       = 5000
+    RTCornerButton          = 0
+    RBCornerButton          = 0
+    LTCornerButton          = 0
+    LBCornerButton          = 0
+    TapButton1              = 1
+    TapButton2              = 2
+    TapButton3              = 3
+    ClickFinger1            = 1
+    ClickFinger2            = 3
+    ClickFinger3            = 2
+    CircularScrolling       = 0
+    CircScrollDelta         = 0.1
+    CircScrollTrigger       = 0
+    CircularPad             = 0
+    PalmDetect              = 0
+    PalmMinWidth            = 10
+    PalmMinZ                = 200
+    CoastingSpeed           = 0
+    CoastingFriction        = 50
+    PressureMotionMinZ      = 30
+    PressureMotionMaxZ      = 160
+    PressureMotionMinFactor = 1
+    PressureMotionMaxFactor = 1
+    GrabEventDevice         = 0
+    TapAndDragGesture       = 1
+    AreaLeftEdge            = 0
+    AreaRightEdge           = 0
+    AreaTopEdge             = 0
+    AreaBottomEdge          = 0
+    HorizHysteresis         = 7
+    VertHysteresis          = 7
+    ClickPad                = 1
+    RightButtonAreaLeft     = 636
+    RightButtonAreaRight    = 0
+    RightButtonAreaTop      = 501
+    RightButtonAreaBottom   = 0
+    MiddleButtonAreaLeft    = 0
+    MiddleButtonAreaRight   = 0
+    MiddleButtonAreaTop     = 0
+    MiddleButtonAreaBottom  = 0
