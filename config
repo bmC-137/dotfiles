@@ -1,0 +1,79 @@
+#
+# AddKeysToAgent is not working from here.
+#
+#
+AddKeysToAgent yes
+Host test.github.com
+    HostName github.com
+    User test
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_github_test
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+
+Host test1.github.com
+    HostName github.com
+    User test1
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_github_test1
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+
+Host ipsec.test3
+    HostName 1.1.1.1
+    User test3
+    PreferredAuthentications publickey
+    IdentityFile /opt/test3/keys/ipsec.pem
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+    ServerAliveInterval 60
+    ServerAliveCountMax 10
+    
+Host ipsec.test4
+    HostName 2.2.2.2
+    User test4
+    PreferredAuthentications publickey
+    IdentityFile /opt/test4/keys/ipsec.pem
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+    ServerAliveInterval 60
+    ServerAliveCountMax 10
+
+host localhost
+    hostname 127.0.0.1
+    user test-local
+    preferredauthentications publickey
+    identityfile /opt/test4/keys/id_ansible
+    identitiesonly yes
+    addkeystoagent yes
+    serveraliveinterval 60
+    serveralivecountmax 10
+
+host mx.test
+    hostname 3.3.3.3
+    port 722
+    user test
+    preferredauthentications publickey
+    IdentityFile ~/.ssh/id_test_mx
+    identitiesonly yes
+    addkeystoagent yes
+    serveraliveinterval 60
+    serveralivecountmax 10
+
+Host 10.10.10.2
+    hostname 10.10.10.2
+    logLevel = INFO
+
+# Host *
+#     AddKeysToAgent = yes
+#     IdentitiesOnly = yes
+#     PreferredAuthentications = publickey
+#     AddressFamily = inet
+#     Protocol = 2
+#     Compression = yes
+#     serveraliveinterval = 60
+#     serveralivecountmax = 20
+#     logLevel = INFO
+
+
+
